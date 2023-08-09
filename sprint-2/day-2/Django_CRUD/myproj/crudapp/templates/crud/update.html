@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        nav {
+            background-color: #1ea6be;
+            color: #fff;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #131212;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #b33900;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'create_view' %}">Create</a></li>
+            <li><a href="{% url 'read_view' %}">Home</a></li>
+        </ul>
+    </nav>
+    <h1>Edit - {{ entry.name }}'s Data</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="new_age">New Age:</label>
+        <input type="number" id="new_age" name="new_age" value="{{ entry.age }}">
+        <label for="new_city">New City:</label>
+        <input type="text" id="new_city" name="new_city" value="{{ entry.city }}">
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
