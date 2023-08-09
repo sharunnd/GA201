@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        ul.dish-list {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Orders List</h1>
+    <ul>
+        {% for order in orders %}
+        <li>
+            <strong>Customer:</strong> {{ order.customer_name }}<br>
+            <ul class="dish-list">
+                {% for dish in order.dishes %}
+                <li>{{ dish.dish_name }} - ₹{{ dish.price }}</li>
+                {% endfor %}
+            </ul>
+            <p>Status: {{ order.status }}</p>
+            <a href="{% url 'update_order_status_view' order_index=forloop.counter0 %}">Update Status</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    
+    <a href="{% url 'menu_view' %}">Go to Home</a>
+</body>
+</html>

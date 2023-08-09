@@ -1,0 +1,32 @@
+[
+    {
+        "customer_name": "ajay",
+        "dishes": [
+            {
+                "dish_name": "Pasta Carbonara",
+                "price": 8.99
+            }
+        ],
+        "status": "ordered"
+    },
+    {
+        "customer_name": "Sharun",
+        "dishes": [
+            {
+                "dish_name": "Pizza Margherita",
+                "price": 10.99
+            }
+        ],
+        "status": "on the way"
+    },
+    {
+        "customer_name": "jay",
+        "dishes": [
+            {
+                "dish_name": "Pizza Margherita",
+                "price": 10.99
+            }
+        ],
+        "status": "ordered"
+    }
+]

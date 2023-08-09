@@ -1,0 +1,26 @@
+[
+    {
+        "dish_id": 1,
+        "dish_name": "Pizza Margherita",
+        "price": 10.99,
+        "availability": true
+    },
+    {
+        "dish_id": 2,
+        "dish_name": "Pasta Carbonara",
+        "price": 8.99,
+        "availability": true
+    },
+    {
+        "dish_id": 3,
+        "dish_name": "samosa",
+        "price": 4.0,
+        "availability": true
+    },
+    {
+        "dish_id": 4,
+        "dish_name": "Biriyani",
+        "price": 250.0,
+        "availability": false
+    }
+]
