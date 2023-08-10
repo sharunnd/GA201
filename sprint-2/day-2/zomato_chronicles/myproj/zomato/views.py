@@ -31,7 +31,8 @@ def save_orders(orders):
     orders_file_path = settings.BASE_DIR / 'zomato' / 'orders.json'
     with open(orders_file_path, 'w') as orders_file:
         json.dump(orders, orders_file, indent=4)
-        
+
+@csrf_exempt     
 def menu_view(request):
     menu_items = load_menu()
 
@@ -113,6 +114,7 @@ def orders_view(request):
     orders = load_orders()
     return render(request, 'menu/orders_list.html', {'orders': orders})
 
+@csrf_exempt
 def update_order_status_view(request, order_index):
     orders = load_orders()
 
@@ -128,7 +130,7 @@ def update_order_status_view(request, order_index):
     current_status = orders[order_index]['status']
     return render(request, 'menu/update_order_status.html', {'order_index': order_index, 'current_status': current_status})
 
-
+@csrf_exempt
 def delete_dish_view(request, dish_id):
     if request.method == 'POST':
         menu_items = load_menu()
