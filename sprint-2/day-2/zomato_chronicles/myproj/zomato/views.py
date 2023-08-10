@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 import json
 from django.conf import settings
 from django.http import JsonResponse
-
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 from .models import Dish
@@ -31,6 +31,7 @@ def save_orders(orders):
     orders_file_path = settings.BASE_DIR / 'zomato' / 'orders.json'
     with open(orders_file_path, 'w') as orders_file:
         json.dump(orders, orders_file, indent=4)
+        
 def menu_view(request):
     menu_items = load_menu()
 
@@ -60,7 +61,7 @@ def menu_view(request):
     return render(request, 'menu/menu_list.html', {'menu_items': menu_items})
 
 
-
+@csrf_exempt
 def add_dish_view(request):
     if request.method == 'POST':
         dish_name = request.POST.get('dish_name')
@@ -83,7 +84,7 @@ def add_dish_view(request):
     return render(request, 'menu/add_dish.html')
 
 
-
+@csrf_exempt
 def take_order_view(request):
     if request.method == 'POST':
         customer_name = request.POST.get('customer_name')

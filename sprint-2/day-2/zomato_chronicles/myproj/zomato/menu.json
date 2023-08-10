@@ -22,5 +22,17 @@
         "dish_name": "Biriyani",
         "price": 250.0,
         "availability": false
+    },
+    {
+        "dish_id": 5,
+        "dish_name": "Masala Dosa",
+        "price": 100.0,
+        "availability": true
+    },
+    {
+        "dish_id": 6,
+        "dish_name": "new dish",
+        "price": 23.0,
+        "availability": true
     }
 ]

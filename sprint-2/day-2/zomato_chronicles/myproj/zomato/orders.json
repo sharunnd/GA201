@@ -7,7 +7,7 @@
                 "price": 8.99
             }
         ],
-        "status": "ordered"
+        "status": "on the way"
     },
     {
         "customer_name": "Sharun",
@@ -25,6 +25,26 @@
             {
                 "dish_name": "Pizza Margherita",
                 "price": 10.99
+            }
+        ],
+        "status": "ordered"
+    },
+    {
+        "customer_name": "Sithin",
+        "dishes": [
+            {
+                "dish_name": "Pasta Carbonara",
+                "price": 8.99
+            }
+        ],
+        "status": "ordered"
+    },
+    {
+        "customer_name": "Sharun",
+        "dishes": [
+            {
+                "dish_name": "Pasta Carbonara",
+                "price": 8.99
             }
         ],
         "status": "ordered"
