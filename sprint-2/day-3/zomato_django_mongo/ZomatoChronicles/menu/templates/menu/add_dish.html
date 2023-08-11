@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Dish</title>
+</head>
+<body>
+    <h1>Add New Dish</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">Dish Name:</label>
+        {{ form.name }}
+        <br>
+        <label for="{{ form.price.id_for_label }}">Price:</label>
+        {{ form.price }}
+        <br>
+        <label for="{{ form.availability.id_for_label }}">Availability:</label>
+        {{ form.availability }}
+        <br>
+        <button type="submit">Add Dish</button>
+    </form>
+</body>
+</html>

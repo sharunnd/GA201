@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zesty Zomato Menu</title>
+</head>
+<body>
+    <h1>Zesty Zomato Menu</h1>
+    <ul>
+        {% for dish in dishes %}
+        <li>{{ dish.name }} - ${{ dish.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
