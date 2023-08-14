@@ -42,3 +42,6 @@ FROM Rides
 WHERE driver_id = 2;
 
 -- Write a query to update the fare of the ride with id 4.
+UPDATE fare
+set fare = 13.6
+WHERE id = 4;
