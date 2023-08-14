@@ -88,7 +88,7 @@ DATABASES = {
             'name': os.environ.get('DB_NAME'),
             'username': os.environ.get('DB_USERNAME'),
             'password': os.environ.get('DB_PASSWORD'),
-            'authMechanism': 'SCRAM-SHA-1',
+            'authSource': 'admin',
         },
     }
 }
@@ -136,3 +136,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+

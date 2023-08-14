@@ -1,7 +1,14 @@
 from django import forms
-from .models import Dish
+from .models import Dish,Order
 
-class AddDishForm(forms.ModelForm):
+class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
-        fields = ['name', 'price', 'availability']
+        fields = ['dish_name', 'price', 'availability']
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['customer_name', 'ordered_items']
+
+

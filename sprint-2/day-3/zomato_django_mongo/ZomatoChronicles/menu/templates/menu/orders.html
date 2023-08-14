@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zesty Zomato - Orders</title>
+</head>
+<body>
+    <h1>Orders:</h1>
+    <ul>
+        {% for order in orders %}
+        <li>
+            Order ID: {{ order.order_id }}
+            Customer: {{ order.customer_name }}
+            Status: {{ order.order_status }}
+            <a href="{% url 'update_delivery_status' order.order_id %}">Update Delivery Status</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zesty Zomato - Take Order</title>
+    
+</head>
+<body>
+    <h1>Take a New Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.customer_name.id_for_label }}">Customer Name:</label>
+            {{ form.customer_name }}
+        </div>
+        <div>
+            <label for="{{ form.ordered_items.id_for_label }}">Ordered Items:</label>
+            {{ form.ordered_items }}
+        </div>
+        <button type="submit">Place Order</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Menu</a>
+</body>
+</html>

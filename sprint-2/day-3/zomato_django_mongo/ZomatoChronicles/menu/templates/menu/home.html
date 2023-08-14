@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zesty Zomato - Menu</title>
+</head>
+<body>
+<h1>Welcome to Zesty Zomato!</h1>
+<h2>Menu:</h2>
+<ul>
+    {% for dish in dishes %}
+    <li>
+        {{ dish.dish_id }}: {{ dish.dish_name }} - ${{ dish.price }}
+        Availability: {% if dish.availability %}Yes{% else %}No{% endif %}
+        <a href="{% url 'delete_dish' dish.dish_id %}" onclick="return confirm('Are you sure you want to delete this dish?')">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
