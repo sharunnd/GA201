@@ -55,5 +55,7 @@ FROM Restaurants
 ORDER BY average_rating DESC
 LIMIT 5;
 
+
+-- Write a query to delete the ride with id 2.
 DELETE FROM Restaurants
 WHERE id = 2;

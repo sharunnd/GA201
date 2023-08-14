@@ -86,3 +86,16 @@ WHERE id < 3 OR name LIKE '%s';
 SELECT id, name, email, address, phone_number
 FROM Customers
 WHERE phone_number IS NULL OR phone_number = '';
+
+-- Write a query to update the fare of the ride with id 4.
+UPDATE Rides
+set fare = 13.6
+WHERE driver_id = 1;
+
+-- Write a query to calculate the total fare for each driver_id.
+SELECT driver_id, SUM(fare) AS total_fare
+FROM Rides
+GROUP BY driver_id;
+
+
+-- Write a query to delete the ride with id 2.
