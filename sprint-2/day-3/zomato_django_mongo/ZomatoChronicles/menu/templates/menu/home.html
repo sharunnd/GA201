@@ -2,18 +2,61 @@
 <html>
 <head>
     <title>Zesty Zomato - Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        li a {
+            text-decoration: none;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        li a:hover {
+            color: #c0392b;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to Zesty Zomato!</h1>
-<h2>Menu:</h2>
-<ul>
-    {% for dish in dishes %}
-    <li>
-        {{ dish.dish_id }}: {{ dish.dish_name }} - ${{ dish.price }}
-        Availability: {% if dish.availability %}Yes{% else %}No{% endif %}
-        <a href="{% url 'delete_dish' dish.dish_id %}" onclick="return confirm('Are you sure you want to delete this dish?')">Delete</a>
-    </li>
-    {% endfor %}
-</ul>
+    <h2>Menu:</h2>
+    <ul>
+        {% for dish in dishes %}
+        <li>
+            <div>
+                <strong>{{ dish.dish_name }}</strong> - ${{ dish.price }}<br>
+                Availability: {% if dish.availability %}Yes{% else %}No{% endif %}
+            </div>
+            <div>
+                <a href="{% url 'delete_dish' dish.dish_id %}" onclick="return confirm('Are you sure you want to delete this dish?')">Delete</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
